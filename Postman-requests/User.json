@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "0091e7f1-860b-4131-8221-12ea9d37cb48",
+		"name": "1. User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register - 12",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\" : \"veli@gmail.com\",\n  \"firstName\" : \"Velina\",\n  \"password\" : \"VeLi88Veli&&\",\n  \"confirmPassword\" : \"VeLi88Veli&&\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8484/users/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit (photo)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/ssevdeva/Desktop/profile photos/girl_profile.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8484/users/edit/photo",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"users",
+						"edit",
+						"photo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit (privacy)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\": 12,\n  \"privacy\": {\n    \"privacyId\": 12,\n    \"viewProfile\": \"n\",\n    \"canNonFriendsFollow\": true,\n    \"canNonFriendsComment\": true,\n    \"canDisplayReviews\": true,\n    \"privateMessages\": true,\n    \"isEmailVisible\": true,\n    \"allowSearchByEmail\": true,\n    \"challengeQuestion\": \"What's my name?\",\n    \"promptToRecommendBooks\": true\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8484/users/edit/privacy",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"users",
+						"edit",
+						"privacy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit (profile)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\": 12,\n  \"email\": \"veli@gmail.com\",\n  \"firstName\": \"Velina\",\n  \"lastName\": \"Dobreva\",\n  \"gender\": \"f\",\n  \"username\": \"vveli\",\n  \"showLastName\": false,\n  \"isReverseNameOrder\": false,\n  \"genderViewableBy\": \"e\",\n  \"locationViewableBy\": \"e\",\n  \"dateOfBirth\": \"1999-12-12\",\n  \"address\": {\n    \"addressId\": 12,\n    \"townName\": \"New York\",\n    \"countryName\": \"USA\"\n  }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8484/users/edit/profile",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"users",
+						"edit",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit (password)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\": 12,\n  \"currentPassword\": \"VeLi88Veli&&\",\n  \"newPassword\": \"VeLi88Veli**\",\n  \"confirmPassword\": \"VeLi88Veli**\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8484/users/edit/password",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"users",
+						"edit",
+						"password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Profile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/users/show/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"users",
+						"show",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Friend",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/friends/add/:friendId",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"friends",
+						"add",
+						":friendId"
+					],
+					"variable": [
+						{
+							"key": "friendId",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Friends",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/friends/show/:id?page=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"friends",
+						"show",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"receiverId\": 5,\n    \"message\": \"Some text :D\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8484/messages/new",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"messages",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sent Messages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/messages/sent?page=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"messages",
+						"sent"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Received Messages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/messages/inbox?page=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"messages",
+						"inbox"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

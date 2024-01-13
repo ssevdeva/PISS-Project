@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "473e127b-0282-4870-aedb-930a06920a6a",
+		"name": "Friends",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "addFriend",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/friends/add/:friendId",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"friends",
+						"add",
+						":friendId"
+					],
+					"variable": [
+						{
+							"key": "friendId",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "showFriends",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/friends/show/:id?page=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"friends",
+						"show",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removeFriend",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/friends/remove/:friendId",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"friends",
+						"remove",
+						":friendId"
+					],
+					"variable": [
+						{
+							"key": "friendId",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

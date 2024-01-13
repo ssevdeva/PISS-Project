@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "b2fdbd5b-2b55-4531-b8f1-ce757f9fc600",
+		"name": "Rating",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "rateBook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bookId\": 17,\n    \"rating\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8484/books/rate",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"books",
+						"rate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBookRatings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/books/ratings/:id?page=2",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"books",
+						"ratings",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "17"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserRatings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/users/ratings/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"users",
+						"ratings",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

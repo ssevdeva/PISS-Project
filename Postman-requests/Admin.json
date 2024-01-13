@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "581aee8a-70e8-4736-8668-d0c833223ded",
+		"name": "4. Admin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login - Ani (admin) - 5",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\" : \"ani.dobreva@gmail.com\",\n  \"password\" : \"ani#Dobreva21\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8484/users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Book - 39",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "cover",
+							"contentType": "",
+							"type": "file",
+							"src": "/Users/ssevdeva/Desktop/covers/city_of_the_dead.jpg"
+						},
+						{
+							"key": "book_info",
+							"value": "{\n\"title\": \"City of the Dead\",\n  \"description\": \"The past comes back to haunt psychologist Alex Delaware and Detective Milo Sturgis when they investigate a grisly double homicide and uncover an even more unspeakable motive in this riveting thriller from the #1 New York Times bestselling master of suspense.\\nLos Angeles is a city of sunlight, celebrity, and possibility. The L.A. often experienced by Homicide Lt. Detective Milo Sturgis and psychologist Alex Delaware, is a city of the dead.\\nEarly one morning, the two of them find themselves in a neighborhood of pretty houses, pretty cars, and pretty people. The scene they encounter is anything but. A naked young man lies dead in the street, the apparent victim of a collision with a moving van hurtling through suburbia in the darkness. But any thoughts of accidental death vanish when a blood trail leads to a nearby home.\\nInside, a young woman lies butchered. The identity of the male victim and his role in the horror remain elusive, but that of the woman creates additional questions. And adding to the shock, Alex has met her while working a convoluted child custody case. Cordelia Gannett was a self-styled internet influencer who'd gotten into legal troubles by palming herself off as a psychologist. Even after promising to desist, she's found a loophole and has continued her online career, aiming to amass clicks and ads by cyber-coaching and cyber-counseling people plagued with relationship issues...\",\n  \"pages\": 336,\n  \"isbn\": \"0525618589\",\n  \"originalTitle\": \"City of the Dead\",\n  \"publishDate\": \"2022-02-08\",\n  \"publisher\": \"Ballantine Books\",\n  \"genreId\": 14,\n  \"languageId\": 2,\n  \"authorsWithName\": [\n    {\"authorId\": 50,\n     \"authorName\": \"Jonathan Kellerman\"\n    }\n  ]\n}",
+							"contentType": "application/json",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8484/books/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"books",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Edition",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "cover",
+							"contentType": "",
+							"type": "file",
+							"src": "/Users/ssevdeva/Desktop/covers/city_of_the_dead.jpg"
+						},
+						{
+							"key": "book_info",
+							"value": "{\n\"title\": \"City of the Dead\",\n  \"description\": \"The past comes back to haunt psychologist Alex Delaware and Detective Milo Sturgis when they investigate a grisly double homicide and uncover an even more unspeakable motive in this riveting thriller from the #1 New York Times bestselling master of suspense.\\nLos Angeles is a city of sunlight, celebrity, and possibility. The L.A. often experienced by Homicide Lt. Detective Milo Sturgis and psychologist Alex Delaware, is a city of the dead.\\nEarly one morning, the two of them find themselves in a neighborhood of pretty houses, pretty cars, and pretty people. The scene they encounter is anything but. A naked young man lies dead in the street, the apparent victim of a collision with a moving van hurtling through suburbia in the darkness. But any thoughts of accidental death vanish when a blood trail leads to a nearby home.\\nInside, a young woman lies butchered. The identity of the male victim and his role in the horror remain elusive, but that of the woman creates additional questions. And adding to the shock, Alex has met her while working a convoluted child custody case. Cordelia Gannett was a self-styled internet influencer who'd gotten into legal troubles by palming herself off as a psychologist. Even after promising to desist, she's found a loophole and has continued her online career, aiming to amass clicks and ads by cyber-coaching and cyber-counseling people plagued with relationship issues...\",\n  \"pages\": 416,\n  \"isbn\": \"0593558766\",\n  \"originalTitle\": \"City of the Dead\",\n  \"publishDate\": \"2022-03-08\",\n  \"publisher\": \"Random House Large Print Publishing\",\n  \"genreId\": 14,\n  \"languageId\": 2,\n  \"authorsWithName\": [\n    {\"authorId\": 50,\n     \"authorName\": \"Jonathan Kellerman\"\n    }\n  ]\n}",
+							"contentType": "application/json",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8484/books/add_edition/:book_id",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"books",
+						"add_edition",
+						":book_id"
+					],
+					"variable": [
+						{
+							"key": "book_id",
+							"value": "39"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Book",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/books/delete/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"books",
+						"delete",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "35"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

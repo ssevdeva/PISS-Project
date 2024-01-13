@@ -1,0 +1,422 @@
+{
+	"info": {
+		"_postman_id": "c5046680-438d-4efa-80e0-8a1f7f19157d",
+		"name": "2. Book",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login - 6",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\" : \"ninanina@abv.bg\",\n  \"password\" : \"niNchetooo123*\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8484/users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Genres",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/genres?page=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"genres"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Like/Unlike Genre",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/genres/react/:genre_id",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"genres",
+						"react",
+						":genre_id"
+					],
+					"variable": [
+						{
+							"key": "genre_id",
+							"value": "28"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Liked Genres",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/genres/fav",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"genres",
+						"fav"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search (title)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/search/by_title/:title?page=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"search",
+						"by_title",
+						":title"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					],
+					"variable": [
+						{
+							"key": "title",
+							"value": "the"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search (auhtor)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/search/by_author/:author?page=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"search",
+						"by_author",
+						":author"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					],
+					"variable": [
+						{
+							"key": "author",
+							"value": "antoine"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search (genre)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/search/by_genre/:genre?page=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"search",
+						"by_genre",
+						":genre"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					],
+					"variable": [
+						{
+							"key": "genre",
+							"value": "23"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add to Shelf",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bookshelfId\": 1,\n    \"bookId\": 18\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8484/books/add_to_shelf",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"books",
+						"add_to_shelf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User's Bookshelves",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/users/bookshelves/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"users",
+						"bookshelves",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rate Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bookId\": 18,\n    \"rating\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8484/books/rate",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"books",
+						"rate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book's Ratings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/books/ratings/:id?page=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"books",
+						"ratings",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "18"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Review",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bookId\": 18,\n    \"review\": \"Had so much fun reading it!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8484/books/add_review",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"books",
+						"add_review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User's Reviews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/users/reviews/:id?page=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"users",
+						"reviews",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/books/show/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"books",
+						"show",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "18"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Cover",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/books/cover/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"books",
+						"cover",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "18"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

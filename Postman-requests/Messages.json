@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "fe61a931-192c-402c-887f-ed6b9cc4ef23",
+		"name": "Messages",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "sendMessage",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"receiverId\": 5,\n    \"message\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8484/messages/new",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"messages",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getReceived",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/messages/inbox?page=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"messages",
+						"inbox"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/messages/sent?page=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"messages",
+						"sent"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "8a0139a1-50f6-4b1a-91a0-31e8590b969f",
+		"name": "ReadingChallenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "enterChallenge",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"booksGoal\": 24\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8484/challenge/enter",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"challenge",
+						"enter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "quitChallenge",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"booksGoal\": -4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8484/challenge/quit",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"challenge",
+						"quit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getParticipants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/challenge/participants?page=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"challenge",
+						"participants"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

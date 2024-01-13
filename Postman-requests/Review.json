@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "c90b3512-02cd-4f0a-88a3-62392a31374d",
+		"name": "Review",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "addReview",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bookId\": 16,\n    \"review\": \"Awesome!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8484/books/add_review",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"books",
+						"add_review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserReviews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/users/reviews/:id?page=2",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"users",
+						"reviews",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": null,
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": null,
+							"value": "1",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBookReviews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/books/reviews/:id?page=2",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"books",
+						"reviews",
+						":id"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

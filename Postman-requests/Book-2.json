@@ -1,0 +1,334 @@
+{
+	"info": {
+		"_postman_id": "7019c42c-cf8e-448e-88ee-1f6bd30b5c35",
+		"name": "Book",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "addBook - Admin - 16",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "cover",
+							"contentType": "",
+							"type": "file",
+							"src": "/Users/ssevdeva/Desktop/covers/war_and_peace.jpg"
+						},
+						{
+							"key": "book_info",
+							"value": "{\n\"title\": \"War and Peace\",\n  \"description\": \"In Russia's struggle with Napoleon, Tolstoy saw a tragedy that involved all mankind. Greater than a historical chronicle, War and Peace is an affirmation of life itself, `a complete picture', as a contemporary reviewer put it, `of everything in which people find their happiness and greatness, their grief and humiliation'.\",\n  \"pages\": 1392,\n  \"isbn\": \"AHP1X823A\",\n  \"originalTitle\": \"Война и миръ\",\n  \"publishDate\": \"1998-06-25\",\n  \"publisher\": \"Oxford University Press\",\n  \"genreId\": 5,\n  \"languageId\": 2,\n  \"authorsWithName\": [\n    {\"authorId\": 20,\n     \"authorName\": \"Leo Tolstoy\"\n    }\n  ]\n}",
+							"contentType": "application/json",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8484/books/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"books",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addBook - Admin - 18",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "cover",
+							"contentType": "",
+							"type": "file",
+							"src": "/Users/ssevdeva/Desktop/covers/little_prince.jpg"
+						},
+						{
+							"key": "book_info",
+							"value": "{\n\"title\": \"The Little Prince\",\n  \"description\": \"A pilot stranded in the desert awakes one morning to see, standing before him, the most extraordinary little fellow. \\\"Please,\\\" asks the stranger, \\\"draw me a sheep.\\\" And the pilot realizes that when life's events are too difficult to understand, there is no choice but to succumb to their mysteries. He pulls out pencil and paper... And thus begins this wise and enchanting fable that, in teaching the secret of what is really important in life, has changed forever the world for its readers.\",\n  \"pages\": 96,\n  \"isbn\": \"JHN1XA489\",\n  \"originalTitle\": \"Le Petit Prince\",\n  \"publishDate\": \"2000-06-29\",\n  \"publisher\": \"Harcourt, Inc.\",\n  \"genreId\": 4,\n  \"languageId\": 2,\n  \"authorsWithName\": [\n    {\"authorId\": 12,\n     \"authorName\": \"Antoine de Saint-Exupéry\"\n    }\n  ]\n}",
+							"contentType": "application/json",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8484/books/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"books",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addBook - Admin - 17",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "cover",
+							"contentType": "",
+							"type": "file",
+							"src": "/Users/ssevdeva/Desktop/covers/harry_potter.jpg"
+						},
+						{
+							"key": "book_info",
+							"value": "{\n\"title\": \"Harry Potter and the Philosopher's Stone\",\n  \"description\": \"Harry Potter thinks he is an ordinary boy - until he is rescued by an owl, taken to Hogwarts School of Witchcraft and Wizardry, learns to play Quidditch and does battle in a deadly duel. The Reason ... HARRY POTTER IS A WIZARD!\",\n  \"pages\": 223,\n  \"isbn\": \"AHP1X823F\",\n  \"originalTitle\": \"Harry Potter and the Philosopher's Stone\",\n  \"publishDate\": \"1997-06-30\",\n  \"publisher\": \"Bloomsbury Publishing\",\n  \"genreId\": 10,\n  \"languageId\": 2,\n  \"authorsWithName\": [\n    {\"authorId\": 1,\n     \"authorName\": \"J.K. Rowling\"\n    }\n  ]\n}",
+							"contentType": "application/json",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8484/books/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"books",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addEdition - Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "cover",
+							"contentType": "",
+							"type": "file",
+							"src": "/Users/ssevdeva/Desktop/covers/twilight_edition.jpg"
+						},
+						{
+							"key": "book_info",
+							"value": "{\n\"title\": \"Crepúsculo\",\n  \"description\": \"Hay tres cosas de las que estoy completamente segura. Primera, Edward es un vampiro. Segunda, una parte de él se muere por beber mi sangre. Y tercera, estoy total y perdidamente enamorada de él.Cuando Isabella Swan se muda a Forks, una pequeña localidad del estado de Washington en la que no deja de llover, piensa que es lo más aburrido que le podía haber ocurrido en la vida. Pero su vida da un giro excitante y aterrador una vez que se encuentra con el misterioso y seductor Edward Cullen. Hasta ese momento, Edgard se las ha arreglado para mantener en secreto su identidad vampírica, pero ahora nadie se encuentra a salvo, y sobre todo Isabella, la persona a quien más quiere Edward... \",\n  \"pages\": 504,\n  \"isbn\": \"9707709944\",\n  \"originalTitle\": \"Twilight\",\n  \"publishDate\": \"2006-12-06\",\n  \"publisher\": \"Alfaguara\",\n  \"genreId\": 10,\n  \"languageId\": 4,\n  \"authorsWithName\": [\n    {\"authorId\": 40,\n     \"authorName\": \"Stephenie Meyer\"\n    }\n  ]\n}",
+							"contentType": "application/json",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8484/books/add_edition/:book_id",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"books",
+						"add_edition",
+						":book_id"
+					],
+					"variable": [
+						{
+							"key": "book_id",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchByTitle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/search/by_title/:title?page",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"search",
+						"by_title",
+						":title"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": null
+						}
+					],
+					"variable": [
+						{
+							"key": "title",
+							"value": "ince"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchByAuthor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/search/by_author/:author?page",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"search",
+						"by_author",
+						":author"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": null
+						}
+					],
+					"variable": [
+						{
+							"key": "author",
+							"value": "owl"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchByGenre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/search/by_genre/:genre?page",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"search",
+						"by_genre",
+						":genre"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": null
+						}
+					],
+					"variable": [
+						{
+							"key": "genre",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBook",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/books/show/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"books",
+						"show",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "18"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCover",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/books/cover/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"books",
+						"cover",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "17"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteBook",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8484/books/delete/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"books",
+						"delete",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
