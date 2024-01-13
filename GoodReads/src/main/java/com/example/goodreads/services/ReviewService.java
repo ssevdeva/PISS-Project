@@ -77,7 +77,7 @@ public class ReviewService {
         List<Review> reviews = reviewRepository.findAllByUser(user);
         List<UserReviewsResponseDTO> responseList = new ArrayList<>();
         reviews.forEach(r -> {
-            UserReviewsResponseDTO dto = mapper.map(r, UserRFeviewsResponseDTO.class);
+            UserReviewsResponseDTO dto = mapper.map(r, UserReviewsResponseDTO.class);
             dto.setTitle(r.getBook().getTitle());
             dto.setFirstName(r.getUser().getFirstName());
             responseList.add(dto);
