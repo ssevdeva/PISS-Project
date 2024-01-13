@@ -1,0 +1,68 @@
+-- Shelves --
+INSERT INTO `GoodReadsDB`.`bookshelves` (`name`) VALUES ('Read');
+INSERT INTO `GoodReadsDB`.`bookshelves` (`name`) VALUES ('Want to read');
+INSERT INTO `GoodReadsDB`.`bookshelves` (`name`) VALUES ('Currently reading');
+
+-- Languages --
+INSERT INTO `GoodReadsDB`.`languages` (`language`) VALUES ('Bulgarian');
+INSERT INTO `GoodReadsDB`.`languages` (`language`) VALUES ('English');
+INSERT INTO `GoodReadsDB`.`languages` (`language`) VALUES ('French');
+INSERT INTO `GoodReadsDB`.`languages` (`language`) VALUES ('Spanish');
+INSERT INTO `GoodReadsDB`.`languages` (`language`) VALUES ('German');
+INSERT INTO `GoodReadsDB`.`languages` (`language`) VALUES ('Chinese');
+INSERT INTO `GoodReadsDB`.`languages` (`language`) VALUES ('Japanese');
+INSERT INTO `GoodReadsDB`.`languages` (`language`) VALUES ('Arabic');
+
+-- Genres --
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Action and adventure');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Alternate history');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Anthology');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Children\'s');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Classic');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Comic book');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Crime');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Drama');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Fairytale');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Fantasy');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Graphic novel');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Historical fiction');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Horror');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Mystery');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Paranormal romance');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Poetry');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Political thriller');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Romance');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Satire');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Science fiction');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Short story');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Suspense');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Thriller');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Western');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Young adult');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Art/architecture');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Autobiography');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Biography');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Business/economics');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Crafts/hobbies');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Cookbook');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Diary');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Dictionary');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Encyclopedia');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Guide');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Health/fitness');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('History');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Home and garden');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Humor');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Journal');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Math');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Memoir');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Philosophy');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Prayer');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Religion, spirituality, and new age');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Textbook');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Review');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Science');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Self help');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Sports and leisure');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('Travel');
+INSERT INTO `GoodReadsDB`.`genres` (`genre_name`) VALUES ('True crime');
