@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lora', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../assets/book-background.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.form-box {
+    width: 90%;
+    max-width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px 60px 70px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.form-box h1 {
+    font-size: 30px;
+    margin-bottom: 50px;
+    color: #ad7731;
+    position: relative;
+}
+
+.form-box h1::after {
+    content: '';
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background: #ad7731;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.input-field {
+    background: #f5ebdd;
+    margin: 15px 0;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    max-height: 65px;
+    overflow: hidden;
+}
+
+input {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 18px 15px;
+    font-size: 13px;
+}
+
+.input-field i {
+    margin-left: 15px;
+    color: #d9cfc2;
+    max-height: 65px;
+    transition: max-height 0.5s ease;
+}
+
+#signButton {
+    width: 40%;
+    flex-basis: 48%;
+    background: #ad7731;
+    font-size: 15px;
+    color: #fff;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+#signButton:hover  {
+    background: #d7aa6f;
+}
+
+.input-group {
+    height: min-content;
+}
+
+#message {
+    text-align: center;
+    font-size: 13px;
+    color: red;
+    margin-bottom: 15px;
+}
+
+.error {
+    text-align: left;
+    margin-left: 10px;
+    font-size: 13px;
+    color: red;
+    margin-top: -10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.message-box {
+    margin-top: -15px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.haveAnAccountMessage {
+    white-space: pre;
+    font-size: 13px;
+}
+
+#formNavigator {
+    color: #d7aa6f;
+    text-decoration: solid;
+    cursor: pointer;
+}
