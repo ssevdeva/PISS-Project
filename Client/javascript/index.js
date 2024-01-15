@@ -80,8 +80,8 @@ async function signUp() {
                     password: document.forms.signForm.password.value.trim(),
                     confirmPassword: document.forms.signForm.password.value.trim()
                 }
-
                 let successfullySaved = await writeUserData(newUser);
+
                 if (typeof successfullySaved === 'number') {
                     // Registration successful, `successfullySaved` contains the user ID
                     localStorage.setItem("currentUser", newUser.email);
@@ -183,6 +183,11 @@ async function writeUserData(user) {
             body: JSON.stringify(user),
         });
 
+        console.log("Response status:", response.status);
+        console.log("Response text:", await response.text());
+
+        console.log("Was here");
+
         if (response.ok) {
             const data = await response.json();
             const userId = data.id;
@@ -208,6 +213,8 @@ async function loginUser(user) {
             },
             body: JSON.stringify(user),
         });
+
+        console.log(response);
 
         if (response.ok) {
             const data = await response.json();
