@@ -1,11 +1,12 @@
 
-## University Curriculum Project
+# University Curriculum Project
 
   A simple Spring based web application.
   Mimics parts of the backend functionality of GoodReads.
 
 ## Technologies
 
+### Server
   * Java 11
   * Maven
   
@@ -22,9 +23,13 @@
   
   * MySql Workbench
   * IntelliJ IDEA
-  * Postman API
-  
-  * VC: Git + GitHub
+
+ ### Client
+  * HTML
+  * CSS
+  * Vanilla JS
+
+  * Visual Studio Code
   
 ## Authors and acknowledgment
   
