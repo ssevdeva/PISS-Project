@@ -61,13 +61,6 @@ public class Book {
     @OneToMany(mappedBy = "book", fetch = FetchType.LAZY)
     private Set<UsersBooks> booksPerUser;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "books_have_editions",
-            joinColumns = @JoinColumn(name = "book_id"),
-            inverseJoinColumns = @JoinColumn(name = "edition_id"))
-    private Set<Book> editions;
-
     @ManyToMany
     @JoinTable(
             name = "books_have_authors",

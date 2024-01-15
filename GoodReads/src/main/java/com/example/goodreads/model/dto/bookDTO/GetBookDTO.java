@@ -29,6 +29,5 @@ public class GetBookDTO {
     private String originalTitle;
     private LocalDate publishDate;
     private String publisher;
-    private int editionsNumber;
 
 }

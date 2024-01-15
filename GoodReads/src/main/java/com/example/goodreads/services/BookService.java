@@ -51,28 +51,6 @@ public class BookService {
     }
 
     @Transactional
-    public BookResponseDTO addEdition(long bookId, String bookInfo, MultipartFile cover, long loggedUserId) {
-        Book originalBook = bookRepository
-                .findById(bookId)
-                .orElseThrow(() -> (new NotFoundException("Book not found!")));
-        Book newEdition = addNewBook(bookInfo, cover, loggedUserId);
-
-        // Create book-edition record in DB
-        Set<Book> originalBookEditions = originalBook.getEditions();
-        if (originalBookEditions == null) {
-            originalBookEditions = new HashSet<>();
-        }
-        originalBookEditions.add(newEdition);
-
-        // Create edition-book record in DB
-        Set<Book> editions = new HashSet<>();
-        editions.add(originalBook);
-        newEdition.setEditions(editions);
-
-        return mapper.map(newEdition, BookResponseDTO.class);
-    }
-
-    @Transactional
     public BookResponseDTO addToShelf(AddBookToShelfDTO bookDTO, long userId) {
         if (bookDTO == null) {
             throw new BadRequestException("Parameters cannot be null!");
@@ -132,7 +110,6 @@ public class BookService {
                     .title(book.getTitle())
                     .ratings(book.getRatings().size())
                     .published(book.getPublishDate().getYear())
-                    .editionsNumber(book.getEditions().size())
                     .build();
             List<String> authors = new ArrayList<>();
             book.getAuthors().forEach(author -> authors.add(author.getAuthorName()));
@@ -154,7 +131,6 @@ public class BookService {
         GetBookDTO bookDTO = mapper.map(book, GetBookDTO.class);
         bookDTO.setRatingsNumber(book.getRatings().size());
         bookDTO.setReviewsNumber(book.getReviews().size());
-        bookDTO.setEditionsNumber(book.getEditions().size());
         if (bookDTO.getRatingsNumber() == 0) {
             bookDTO.setAvgRating(0.0);
         } else {

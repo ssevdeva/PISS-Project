@@ -16,6 +16,5 @@ public class SearchBookDTO {
     private double avgRating;
     private long ratings;
     private int published;
-    private long editionsNumber;
 
 }

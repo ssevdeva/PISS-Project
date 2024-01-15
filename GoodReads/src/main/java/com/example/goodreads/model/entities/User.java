@@ -48,9 +48,6 @@ public class User {
     private String firstName;
 
     @Column
-    private String middleName;
-
-    @Column
     private String lastName;
 
     @Column
@@ -67,45 +64,10 @@ public class User {
     private String username;
 
     @Column
-    private Boolean showLastName;
-
-    @Column
-    private Boolean isReverseNameOrder;
-
-    @Column
-    private char genderViewableBy;
-
-    @Column
-    private char locationViewableBy;
-
-    @Column
     private LocalDate dateOfBirth;
 
     @Column
-    private String webSite;
-
-    @Column
-    private String interests;
-
-    @Column
     private String booksPreferences;
-
-    @Column
-    private String aboutMe;
-
-    @OneToOne
-    @JoinColumn(name = "adress_id")
-    private Address address;
-
-    @OneToOne
-    @JoinColumn(name = "privacy_id")
-    private Privacy privacy;
-
-    @OneToMany(mappedBy = "sender", fetch = FetchType.LAZY)
-    private Set<Message> messagesSent;
-
-    @OneToMany(mappedBy = "receiver", fetch = FetchType.LAZY)
-    private Set<Message> messagesReceived;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private Set<Review> reviews;
@@ -118,13 +80,6 @@ public class User {
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private Set<UsersBooks> books;
-
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "users_have_friends",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "friend_id"))
-    private Set<User> friends;
 
     @ManyToMany
     @JoinTable(

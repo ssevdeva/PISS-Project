@@ -60,18 +60,10 @@ public class UserController extends BaseController {
     }
 
     @PutMapping("/users/edit/profile")
-    public ResponseEntity<UserResponseDTO> editProfile(@RequestBody UserWithAddressDTO userEdited,
+    public ResponseEntity<UserResponseDTO> editProfile(@RequestBody UserDTO userEdited,
                                                        HttpSession session, HttpServletRequest request) {
         validateSession(session, request);
         UserResponseDTO dto = userService.editProfile(userEdited, (long) session.getAttribute(USER_ID));
-        return ResponseEntity.ok(dto);
-    }
-
-    @PutMapping("/users/edit/privacy")
-    public ResponseEntity<UserResponseDTO> editPrivacy(@RequestBody UserWithPrivacyDTO userEdited,
-                                                       HttpSession session, HttpServletRequest request) {
-        validateSession(session, request);
-        UserResponseDTO dto = userService.editPrivacy(userEdited, (long) session.getAttribute(USER_ID));
         return ResponseEntity.ok(dto);
     }
 
@@ -126,7 +118,7 @@ public class UserController extends BaseController {
     @GetMapping("users/show/{id}")
     public ResponseEntity<GetUserDTO> getUser(@PathVariable long id, HttpSession session) {
         validateSession(session);
-        GetUserDTO userDTO = userService.getUser(id, (long) session.getAttribute(USER_ID));
+        GetUserDTO userDTO = userService.getUser(id);
         return ResponseEntity.ok(userDTO);
     }
 

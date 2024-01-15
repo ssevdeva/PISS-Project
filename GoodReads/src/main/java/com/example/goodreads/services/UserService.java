@@ -31,19 +31,9 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
     @Autowired
-    private AddressRepository addressRepository;
-    @Autowired
-    private PrivacyRepository privacyRepository;
-    @Autowired
     private BookshelfRepository bookshelfRepository;
     @Autowired
     private BookRepository bookRepository;
-    @Autowired
-    private ReadingChallengeRepository readingChallengeRepository;
-    @Autowired
-    private PrivacyService privacyService;
-    @Autowired
-    private AddressService addressService;
     @Autowired
     private PasswordEncoder passwordEncoder;
     @Autowired
@@ -94,25 +84,17 @@ public class UserService {
         if (userRepository.findByEmail(email) != null) {
             throw new BadRequestException("User with this email already exists!");
         }
-        Privacy pr = privacyService.createDefaultPrivacy();
-        Address address = addressService.createDefaultAddress();
         User user = User.builder()
                 .firstName(firstName)
                 .email(email)
                 .password(passwordEncoder.encode(password))
-                .showLastName(true)
-                .isReverseNameOrder(false)
-                .gender(Helper.Visibility.NONE.symbol)
-                .genderViewableBy(Helper.Visibility.NONE.symbol)
-                .locationViewableBy(Helper.Visibility.NONE.symbol)
-                .address(address)
-                .privacy(pr)
+                .gender(User.Gender.NONE.symbol)
                 .isAdmin(false).build();
         return mapper.map(userRepository.save(user), UserResponseDTO.class);
     }
 
     @Transactional
-    public UserResponseDTO editProfile(UserWithAddressDTO dto, long loggedUserId) {
+    public UserResponseDTO editProfile(UserDTO dto, long loggedUserId) {
         if (dto == null) {
             throw new NullPointerException("No user provided!");
         }
@@ -124,44 +106,13 @@ public class UserService {
         if (!dto.isValid()) {
             throw new BadRequestException("Wrong account settings provided!");
         }
-        if (user.getAddress().getAddressId() != dto.getAddress().getAddressId()) {
-            dto.getAddress().setAddressId(user.getAddress().getAddressId());
-        }
         user.setEmail(dto.getEmail());
         user.setFirstName(dto.getFirstName());
-        user.setMiddleName(dto.getMiddleName());
         user.setLastName(dto.getLastName());
         user.setGender(dto.getGender());
         user.setUsername(dto.getUsername());
-        user.setShowLastName(dto.getShowLastName());
-        user.setIsReverseNameOrder(dto.getIsReverseNameOrder());
-        user.setGenderViewableBy(dto.getGenderViewableBy());
-        user.setLocationViewableBy(dto.getLocationViewableBy());
         user.setDateOfBirth(dto.getDateOfBirth());
-        user.setWebSite(dto.getWebSite());
-        user.setInterests(dto.getInterests());
         user.setBooksPreferences(dto.getBooksPreferences());
-        user.setAboutMe(dto.getAboutMe());
-        user.setAddress(dto.getAddress());
-        addressRepository.save(user.getAddress());
-        return mapper.map(userRepository.save(user), UserResponseDTO.class);
-    }
-
-    @Transactional
-    public UserResponseDTO editPrivacy(UserWithPrivacyDTO dto, long loggedUserId) {
-        if (dto == null) {
-            throw new NullPointerException("No user provided!");
-        }
-        long userId = dto.getUserId();
-        if (loggedUserId != userId) {
-            throw new BadRequestException("Wrong user ID provided!");
-        }
-        User user = userRepository.findById(userId).orElseThrow(() -> (new NotFoundException("User not found!")));
-        if (dto.getPrivacy().getPrivacyId() != user.getPrivacy().getPrivacyId() || !dto.isValid()) {
-            throw new BadRequestException("Wrong privacy settings provided!");
-        }
-        user.setPrivacy(dto.getPrivacy());
-        privacyRepository.save(user.getPrivacy());
         return mapper.map(userRepository.save(user), UserResponseDTO.class);
     }
 
@@ -202,13 +153,7 @@ public class UserService {
     @Transactional
     public UserResponseDTO deleteUser(long userId) {
         User user = userRepository.findById(userId).orElseThrow(() -> (new NotFoundException("User not found!")));
-        Optional<ReadingChallenge> opt = readingChallengeRepository.findReadingChallengeByUser(user);
-        if (opt.isPresent()) {
-            readingChallengeRepository.deleteByUser(user);
-        }
         userRepository.delete(user);
-        addressRepository.deleteById(user.getAddress().getAddressId());
-        privacyRepository.deleteById(user.getPrivacy().getPrivacyId());
         return mapper.map(user, UserResponseDTO.class);
     }
 
@@ -249,41 +194,13 @@ public class UserService {
         return shelves;
     }
 
-    public GetUserDTO getUser(long userId, long loggedUserId) {
+    public GetUserDTO getUser(long userId) {
         User user = userRepository
                 .findById(userId)
                 .orElseThrow(() -> (new NotFoundException("User not found!")));
-        User loggedUser = userRepository
-                .findById(loggedUserId)
-                .orElseThrow(() -> (new NotFoundException("User not found!")));
 
         GetUserDTO dto = mapper.map(user, GetUserDTO.class);
-        boolean isFriend = false;
-
-        if (userId != loggedUserId) {
-            isFriend = user.getFriends().contains(loggedUser);
-            if (Helper.Visibility.getVisibility(user.getPrivacy().getViewProfile()) == Helper.Visibility.NONE) {
-                throw new DeniedPermissionException("Private user!");
-            }
-            if (Helper.Visibility.getVisibility(user.getPrivacy().getViewProfile()) == Helper.Visibility.FRIENDS) {
-                if (!isFriend) {
-                    throw new DeniedPermissionException(("User can be viewed by friends only!"));
-                }
-            }
-            if (!user.getShowLastName() && !isFriend) {
-                dto.setLastName(null);
-            }
-            if (!user.getPrivacy().getIsEmailVisible() && !isFriend) {
-                dto.setEmail(null);
-            }
-            Helper.Visibility genderVisibility = Helper.Visibility.getVisibility(user.getGenderViewableBy());
-            if (genderVisibility == Helper.Visibility.FRIENDS && !isFriend || genderVisibility == Helper.Visibility.NONE) {
-                dto.setGender(' ');
-            }
-        }
-        if (user.getPrivacy().getCanDisplayReviews() || isFriend || userId == loggedUserId) {
-            dto.setNumberOfReviews(user.getReviews().size());
-        }
+        dto.setNumberOfReviews(user.getReviews().size());
         dto.setNumberOfRatings(user.getRatings().size());
         if (dto.getNumberOfRatings() == 0) {
             dto.setAverageRatings(0.0);

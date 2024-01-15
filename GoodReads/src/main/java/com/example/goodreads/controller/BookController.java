@@ -36,17 +36,6 @@ public class BookController extends BaseController {
         return ResponseEntity.ok(dto);
     }
 
-    @PostMapping("/books/add_edition/{book_id}")
-    public ResponseEntity<BookResponseDTO> addEdition(@PathVariable long book_id,
-                                                      @RequestParam(name = "book_info") String bookInfo,
-                                                      @RequestParam(name = "cover") MultipartFile cover,
-                                                      HttpSession session, HttpServletRequest request) {
-        validateSession(session, request);
-        Helper.validateFile(cover);
-        BookResponseDTO dto = bookService.addEdition(book_id, bookInfo, cover, (long)session.getAttribute(USER_ID));
-        return ResponseEntity.ok(dto);
-    }
-
     @PostMapping("/books/add_to_shelf")
     public ResponseEntity<BookResponseDTO> addToShelf(@RequestBody AddBookToShelfDTO bookDTO,
                                                       HttpSession session, HttpServletRequest request) {

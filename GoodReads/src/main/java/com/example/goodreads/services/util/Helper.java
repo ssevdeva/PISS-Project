@@ -57,7 +57,6 @@ public class Helper {
     }
 
     public static void validateFile(MultipartFile multipartFile) {
-        boolean result = true;
         String contentType = multipartFile.getContentType();
         if (contentType == null || !isSupportedContentType(contentType)) {
             throw new FileNotAllowedException("Only PNG, JPG or JPEG images allowed!");
