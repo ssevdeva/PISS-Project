@@ -183,11 +183,6 @@ async function writeUserData(user) {
             body: JSON.stringify(user),
         });
 
-        console.log("Response status:", response.status);
-        console.log("Response text:", await response.text());
-
-        console.log("Was here");
-
         if (response.ok) {
             const data = await response.json();
             const userId = data.id;
