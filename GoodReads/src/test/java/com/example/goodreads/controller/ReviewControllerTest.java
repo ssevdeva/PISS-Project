@@ -40,7 +40,6 @@ public class ReviewControllerTest {
 
     @Test
     void testGetBookReviews() throws Exception {
-        // Arrange
         long bookId = 1L;
         int page = 1;
         List<ReviewWithUserDTO> reviewResults = Collections.singletonList(new ReviewWithUserDTO());
@@ -49,7 +48,6 @@ public class ReviewControllerTest {
 
         when(reviewService.getBookReviews(bookId)).thenReturn(reviewResults);
 
-        // Act & Assert
         mockMvc.perform(get("/books/reviews/{id}", bookId)
                         .session(mockSession).sessionAttr(ReviewController.LOGGED, true)
                         .param("page", String.valueOf(page))
@@ -61,7 +59,7 @@ public class ReviewControllerTest {
     void testGetUserReviews() throws Exception {
         long userId = 1L;
         int page = 1;
-        List<UserReviewsResponseDTO> reviewResults = Collections.singletonList(new UserReviewsResponseDTO(/* initialize DTO here */));
+        List<UserReviewsResponseDTO> reviewResults = Collections.singletonList(new UserReviewsResponseDTO());
 
         MockHttpSession mockSession = new MockHttpSession();
 
